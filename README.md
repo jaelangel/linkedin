@@ -32,12 +32,16 @@
 │   ├── query-recipes.md               ← 【最常用】现成"配方":按人群/行业/地区直接复制即用
 │   ├── linkedin-boolean.md            ← LinkedIn 站内布尔检索式(模块化积木,可自由组合)
 │   └── google-xray.md                 ← Google / Bing X-ray 检索式(扩大召回)
-└── reference/
-    ├── chinese-surnames-pinyin.md     ← 华人姓名信号:常见姓氏拼音(含粤/台拼写)
-    ├── target-companies.md            ← 四大行业的世界 500 强 / 龙头公司清单(可贴进检索式)
-    ├── qs-top100-universities.md      ← QS 前 100 院校(分地区 + 校名别名/简称)
-    └── return-intent-signals.md       ← 回国意愿信号词库
+├── reference/
+│   ├── chinese-surnames-pinyin.md     ← 华人姓名信号:常见姓氏拼音(含粤/台拼写)
+│   ├── target-companies.md            ← 四大行业的世界 500 强 / 龙头公司清单(可贴进检索式)
+│   ├── qs-top100-universities.md      ← QS 前 100 院校(分地区 + 校名别名/简称)
+│   └── return-intent-signals.md       ← 回国意愿信号词库
+└── examples/
+    └── joyson-roles.md                ← 实战示例:把"均胜高层次人才需求"表 → 按岗位簇可直接跑的检索方案
 ```
+
+> **想看真实例子?** 直接打开 `examples/joyson-roles.md` —— 它把一张真实的招聘表(23 个博士岗:具身智能/新能源/智能座舱/微电机)拆成 8 个岗位簇,每簇都给了"该领域海外该挖的公司+实验室+强校 + 现成 LinkedIn/X-ray 检索式"。
 
 ---
 
