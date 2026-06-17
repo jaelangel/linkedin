@@ -134,7 +134,8 @@ def process(data_rows, cols, opts, domains):
             continue
         ranked = j.detect(blob, domains)
         if ranked:
-            key, score, hits = ranked[0]
+            key, _weight, hits = ranked[0]
+            score = len(hits)
             d = domains[key]
             label = d["label_zh"]
             linkedin = j.build_linkedin(d, opts)

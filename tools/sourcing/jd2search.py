@@ -69,21 +69,29 @@ def trigger_regex(t):
     return None
 
 
+STRONG_WEIGHT = 2  # strong 信号每命中一个记的分数(普通信号记 1)
+
+
 def detect(text, domains):
-    """返回 [(key, score, matched_triggers), ...] 按命中数降序。"""
+    """返回 [(key, weight, matched_triggers), ...] 按加权得分降序。
+
+    普通 trigger 命中记 1 分;strong 信号命中记 STRONG_WEIGHT 分,
+    让 VLA/世界模型/智能体等强特征在跨领域 JD 里胜出。
+    """
     low = text.lower()
     scored = []
     for key, d in domains.items():
-        hits = []
-        for t in d.get("triggers", []):
+        strong = set(d.get("strong", []))
+        triggers = list(dict.fromkeys(list(d.get("triggers", [])) + list(strong)))
+        hits, weight = [], 0
+        for t in triggers:
             rx = trigger_regex(t)
-            if rx is not None:
-                if rx.search(text):
-                    hits.append(t)
-            elif t.lower() in low:
+            matched = rx.search(text) if rx is not None else (t.lower() in low)
+            if matched:
                 hits.append(t)
+                weight += STRONG_WEIGHT if t in strong else 1
         if hits:
-            scored.append((key, len(hits), hits))
+            scored.append((key, weight, hits))
     scored.sort(key=lambda x: x[1], reverse=True)
     return scored
 
@@ -193,9 +201,9 @@ def main():
         return
 
     if len(ranked) > 1:
-        print("领域候选排名:", ", ".join("%s(%d)" % (k, s) for k, s, _ in ranked[:5]), "\n")
-    for key, score, hits in ranked[: max(1, args.top)]:
-        emit(key, domains[key], args, score, hits)
+        print("领域候选排名:", ", ".join("%s(%d)" % (k, len(h)) for k, _, h in ranked[:5]), "\n")
+    for key, _weight, hits in ranked[: max(1, args.top)]:
+        emit(key, domains[key], args, len(hits), hits)
 
 
 if __name__ == "__main__":

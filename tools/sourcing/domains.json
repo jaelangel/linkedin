@@ -1,9 +1,10 @@
 {
-  "_comment": "领域知识库:jd2search.py 据此把 JD 识别成领域并生成检索式。可自由增删。每个领域:label_zh 中文名;triggers 触发词(在 JD 里命中即记分,中英混排);keywords 研究方向检索词;titles 目标职位;companies 海外目标公司/实验室;schools 该领域强校。检索词不要自带引号,脚本会自动给含空格/特殊字符的词加引号。",
+  "_comment": "领域知识库:jd2search.py 据此把 JD 识别成领域并生成检索式。可自由增删。每个领域:label_zh 中文名;triggers 触发词(在 JD 里命中即记分,中英混排);strong(可选)强信号词,命中按更高权重计分(默认 3 倍),用于让强特征在跨领域 JD 里胜出;keywords 研究方向检索词;titles 目标职位;companies 海外目标公司/实验室;schools 该领域强校。检索词不要自带引号,脚本会自动给含空格/特殊字符的词加引号。",
 
   "embodied_ai": {
     "label_zh": "具身大模型(VLA/世界模型/预训练后训练/Agent)",
-    "triggers": ["VLA", "Vision-Language-Action", "OpenVLA", "RT-2", "world model", "世界模型", "具身", "embodied", "diffusion policy", "扩散策略", "预训练", "后训练", "humanoid", "人形", "foundation model", "大模型", "manipulation", "操作", "robot learning", "Agent", "多模态融合"],
+    "triggers": ["VLA", "Vision-Language-Action", "OpenVLA", "RT-2", "world model", "世界模型", "具身", "embodied", "diffusion policy", "扩散策略", "预训练", "后训练", "humanoid", "人形", "foundation model", "大模型", "manipulation", "robot learning", "Agent", "多模态融合", "智能体", "多智能体", "multi-agent", "agent harness", "tool use"],
+    "strong": ["VLA", "Vision-Language-Action", "OpenVLA", "RT-2", "world model", "世界模型", "具身", "embodied", "humanoid", "人形", "robot foundation model", "robot learning", "智能体", "多智能体", "multi-agent", "agent harness"],
     "keywords": ["VLA", "Vision-Language-Action", "OpenVLA", "diffusion policy", "world model", "embodied", "manipulation", "humanoid", "imitation learning", "robot learning", "robot foundation model"],
     "titles": ["Research Scientist", "Research Engineer", "Robotics Researcher", "Member of Technical Staff", "Applied Scientist", "Postdoctoral"],
     "companies": ["Tesla", "Figure AI", "Physical Intelligence", "Skild AI", "1X Technologies", "Agility Robotics", "Apptronik", "Sanctuary AI", "Boston Dynamics", "RAI Institute", "Covariant", "Dexterity", "Intrinsic", "NVIDIA", "Google DeepMind", "Toyota Research Institute", "Meta FAIR", "Amazon Robotics", "Waymo", "Wayve"],
@@ -57,7 +58,7 @@
 
   "auto_optics_hmi": {
     "label_zh": "智能座舱/车载光学/HMI",
-    "triggers": ["光学", "optical", "optics", "HUD", "AR-HUD", "head-up display", "波导", "waveguide", "显示", "display", "Mini-LED", "座舱", "cockpit", "HMI", "人机交互", "human-machine", "多模态", "multimodal", "VCSEL", "激光显示", "laser display", "Zemax", "自由曲面", "freeform", "抬头显示", "DMS", "driver monitoring", "舱内", "in-cabin", "ToF", "数字人"],
+    "triggers": ["光学", "optical", "optics", "HUD", "AR-HUD", "head-up display", "波导", "waveguide", "显示", "display", "Mini-LED", "座舱", "cockpit", "HMI", "人机交互", "human-machine", "多模态", "multimodal", "VCSEL", "激光显示", "laser display", "Zemax", "自由曲面", "freeform", "抬头显示", "DMS", "driver monitoring", "舱内", "in-cabin", "ToF", "数字人", "毫米波", "传感融合", "自然交互", "语音交互"],
     "keywords": ["HUD", "AR-HUD", "head-up display", "waveguide", "optical design", "freeform optics", "Zemax", "CODE V", "Mini-LED", "VCSEL", "laser display", "imaging optics", "illumination", "smart cockpit", "in-cabin", "driver monitoring", "multimodal", "ToF", "3D perception"],
     "titles": ["Optical Engineer", "Optical Scientist", "Research Scientist", "Display Engineer", "Perception Engineer"],
     "companies": ["Continental", "Bosch", "Visteon", "Harman", "Panasonic Automotive", "LG Display", "Aptiv", "Texas Instruments", "Envisics", "WayRay", "Lumus", "DigiLens", "Apple", "Meta Reality Labs", "Magic Leap", "Microsoft"],
