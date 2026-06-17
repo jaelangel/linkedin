@@ -41,7 +41,8 @@
 │   └── joyson-roles.md                ← 实战示例:把"均胜高层次人才需求"表 → 按岗位簇可直接跑的检索方案
 └── tools/
     └── sourcing/
-        ├── jd2search.py               ← 【脚本】贴 JD → 自动生成 LinkedIn 布尔 + Google X-ray 检索式(零依赖)
+        ├── jd2search.py               ← 【脚本】贴单条 JD → 自动生成 LinkedIn 布尔 + Google X-ray 检索式(零依赖)
+        ├── batch_xlsx.py              ← 【脚本】整张需求表(.xlsx/.csv)→ 每岗位检索式 → 汇总 Markdown/CSV
         ├── domains.json               ← 领域知识库(关键词/目标公司/强校),可自由编辑扩展
         └── README.md                  ← 脚本用法
 ```

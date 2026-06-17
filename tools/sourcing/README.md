@@ -48,6 +48,24 @@ python3 jd2search.py --list-domains
 - **加地区**:在 `jd2search.py` 顶部 `REGIONS` 里加一项。
 - 领域知识来源与方法论见仓库根目录 `../../playbook.md`、`../../examples/joyson-roles.md`。
 
+## 批量:整张需求表一次跑完(`batch_xlsx.py`)
+
+吃一张招聘需求表(`.xlsx` / `.csv`),**逐个岗位**自动识别领域、生成检索式,汇总成 Markdown(可选再导出 CSV)。
+
+```bash
+# 把整张 Excel 跑成一份 Markdown + 一份 CSV
+python3 batch_xlsx.py --file 需求表.xlsx --out report.md --csv report.csv --region us
+
+# CSV 输入、欧洲地区、X-ray 同时带公司+院校、附回国意愿
+python3 batch_xlsx.py --file 需求表.csv --region europe --target both --intent
+```
+
+- **自动列识别**:找表头行,按表头关键词映射"岗位名称 / 单位 / 工作内容等 / 招收人数";把"工作内容+专业方向+其他条件"等多列合并成 JD 文本喂给识别。
+- **手动覆盖**(列识别不准时):`--title-col 2 --unit-col 1 --text-cols 3,4,5 --header-row 2`(均为 1 基)。
+- **输出**:Markdown 含①汇总表(岗位→识别领域→命中→人数)②每岗位的 LinkedIn 串 + X-ray 串 + facet 提示;CSV 便于导进表格/分配给 sourcer。
+- **依赖**:`.xlsx` 需 `openpyxl`(`pip install openpyxl`);`.csv` 零依赖。
+- 跨领域岗位取**命中最高**的那个;不满意可对该岗位单独用 `jd2search.py --domain xxx` 重出,或 `--top 2` 看候选。
+
 ## 合规
 
 本工具**只生成检索式**,供你**手动**搜索、查看公开 profile。请勿用于自动化抓取/群发。详见 `../../compliance.md`。
