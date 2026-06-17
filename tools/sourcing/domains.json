@@ -1,0 +1,111 @@
+{
+  "_comment": "领域知识库:jd2search.py 据此把 JD 识别成领域并生成检索式。可自由增删。每个领域:label_zh 中文名;triggers 触发词(在 JD 里命中即记分,中英混排);keywords 研究方向检索词;titles 目标职位;companies 海外目标公司/实验室;schools 该领域强校。检索词不要自带引号,脚本会自动给含空格/特殊字符的词加引号。",
+
+  "embodied_ai": {
+    "label_zh": "具身大模型(VLA/世界模型/预训练后训练/Agent)",
+    "triggers": ["VLA", "Vision-Language-Action", "OpenVLA", "RT-2", "world model", "世界模型", "具身", "embodied", "diffusion policy", "扩散策略", "预训练", "后训练", "humanoid", "人形", "foundation model", "大模型", "manipulation", "操作", "robot learning", "Agent", "多模态融合"],
+    "keywords": ["VLA", "Vision-Language-Action", "OpenVLA", "diffusion policy", "world model", "embodied", "manipulation", "humanoid", "imitation learning", "robot learning", "robot foundation model"],
+    "titles": ["Research Scientist", "Research Engineer", "Robotics Researcher", "Member of Technical Staff", "Applied Scientist", "Postdoctoral"],
+    "companies": ["Tesla", "Figure AI", "Physical Intelligence", "Skild AI", "1X Technologies", "Agility Robotics", "Apptronik", "Sanctuary AI", "Boston Dynamics", "RAI Institute", "Covariant", "Dexterity", "Intrinsic", "NVIDIA", "Google DeepMind", "Toyota Research Institute", "Meta FAIR", "Amazon Robotics", "Waymo", "Wayve"],
+    "schools": ["Stanford", "UC Berkeley", "Carnegie Mellon", "MIT", "Georgia Tech", "University of Washington", "UC San Diego", "USC", "Princeton", "University of Michigan", "Caltech", "ETH Zurich", "EPFL", "Imperial College London", "Oxford", "University of Toronto", "National University of Singapore", "Nanyang Technological University"]
+  },
+
+  "robot_rl": {
+    "label_zh": "机器人强化学习",
+    "triggers": ["reinforcement learning", "强化学习", "PPO", "SAC", "DQN", "DDPG", "TD3", "GRPO", "TD-MPC", "sim-to-real", "模仿学习", "imitation learning", "抓取", "grasping", "reward", "奖励函数", "rollout"],
+    "keywords": ["reinforcement learning", "deep reinforcement learning", "PPO", "SAC", "TD-MPC", "model-based RL", "sim-to-real", "domain randomization", "manipulation", "grasping", "imitation learning", "RLHF"],
+    "titles": ["Research Scientist", "Research Engineer", "Robotics Researcher", "Postdoctoral"],
+    "companies": ["Tesla", "Figure AI", "Physical Intelligence", "Skild AI", "1X Technologies", "Agility Robotics", "NVIDIA", "Google DeepMind", "Toyota Research Institute", "Boston Dynamics", "Covariant", "Waymo", "Wayve"],
+    "schools": ["UC Berkeley", "Stanford", "Carnegie Mellon", "MIT", "ETH Zurich", "University of Washington", "Georgia Tech", "Imperial College London", "National University of Singapore", "University of Toronto"]
+  },
+
+  "inference_opt": {
+    "label_zh": "推理优化/边缘部署",
+    "triggers": ["TensorRT", "ONNX", "量化", "quantization", "INT8", "FP16", "推理优化", "inference", "部署", "deploy", "剪枝", "pruning", "蒸馏", "distillation", "CUDA", "Orin", "Jetson", "Atlas", "边缘", "edge", "算子融合", "operator fusion", "模型压缩", "model compression", "吞吐", "延迟"],
+    "keywords": ["TensorRT", "ONNX", "ONNX Runtime", "quantization", "INT8", "model compression", "pruning", "knowledge distillation", "CUDA", "inference optimization", "edge inference", "Jetson", "Orin", "TVM", "operator fusion"],
+    "titles": ["Research Engineer", "Deep Learning Engineer", "MLSys Engineer", "Software Engineer", "Research Scientist"],
+    "companies": ["NVIDIA", "Qualcomm", "Google", "Meta", "Apple", "AMD", "Intel", "Tesla"],
+    "schools": ["MIT", "Stanford", "UC Berkeley", "Carnegie Mellon", "University of Washington", "UIUC", "Georgia Tech", "University of Toronto"]
+  },
+
+  "sim_data_eval": {
+    "label_zh": "仿真/数据闭环/评测",
+    "triggers": ["仿真", "simulation", "Isaac Sim", "Isaac Lab", "MuJoCo", "Gazebo", "PyBullet", "Genesis", "数字孪生", "digital twin", "domain randomization", "评测", "benchmark", "数据闭环", "合成数据", "synthetic data", "遥操", "teleoperation", "sim-to-real", "数据采集"],
+    "keywords": ["Isaac Sim", "Isaac Lab", "MuJoCo", "Gazebo", "PyBullet", "domain randomization", "synthetic data", "sim-to-real", "digital twin", "physics simulation", "benchmark", "data pipeline", "teleoperation"],
+    "titles": ["Research Engineer", "Research Scientist", "Simulation Engineer", "Robotics Engineer"],
+    "companies": ["NVIDIA", "Applied Intuition", "Waymo", "Wayve", "Google DeepMind", "Tesla", "Boston Dynamics", "Figure AI"],
+    "schools": ["Stanford", "UC Berkeley", "Carnegie Mellon", "MIT", "Georgia Tech", "University of Washington", "ETH Zurich", "National University of Singapore"]
+  },
+
+  "dexterous_tactile": {
+    "label_zh": "灵巧手/触觉力控/传感器",
+    "triggers": ["灵巧手", "dexterous", "触觉", "tactile", "力控", "force control", "六维力", "force/torque", "柔顺", "compliant", "impedance", "GelSight", "in-hand", "力觉", "末端执行器", "抓取"],
+    "keywords": ["dexterous manipulation", "dexterous hand", "tactile sensing", "tactile sensor", "force/torque sensor", "six-axis force", "force control", "compliant control", "impedance control", "GelSight", "grasping", "in-hand manipulation"],
+    "titles": ["Research Scientist", "Robotics Researcher", "Research Engineer", "Postdoctoral"],
+    "companies": ["Shadow Robot", "Sanctuary AI", "Tesla", "Meta", "GelSight", "Figure AI", "Apptronik"],
+    "schools": ["MIT", "Carnegie Mellon", "Stanford", "University of Washington", "Columbia University", "Imperial College London", "ETH Zurich"]
+  },
+
+  "power_electronics": {
+    "label_zh": "新能源/电力电子/电池",
+    "triggers": ["功率电子", "power electronics", "电力电子", "逆变", "inverter", "DC-DC", "OBC", "车载充电", "on-board charger", "电池", "battery", "BMS", "SOC", "SOH", "SOP", "电芯", "cell", "SiC", "GaN", "宽禁带", "wide bandgap", "电源", "power supply", "电机控制", "motor control", "三电", "新能源", "储能", "energy storage", "热管理", "thermal management", "EMC", "高压配电"],
+    "keywords": ["power electronics", "traction inverter", "DC-DC", "on-board charger", "OBC", "SiC", "GaN", "wide bandgap", "battery management", "BMS", "SOC estimation", "SOH", "electrochemical model", "cell modeling", "motor drive", "EMC", "thermal management"],
+    "titles": ["Power Electronics Engineer", "Research Engineer", "Powertrain Engineer", "Battery Algorithm Engineer", "Research Scientist"],
+    "companies": ["Tesla", "Rivian", "Lucid Motors", "Bosch", "Continental", "BorgWarner", "Vitesco", "Infineon", "onsemi", "Wolfspeed", "Texas Instruments", "Navitas", "Power Integrations", "ABB", "Siemens", "Panasonic Energy", "LG Energy Solution", "Samsung SDI", "Northvolt", "QuantumScape", "Solid Power"],
+    "schools": ["Virginia Tech", "University of Wisconsin-Madison", "University of Tennessee", "Georgia Tech", "University of Michigan", "MIT", "Stanford", "ETH Zurich", "RWTH Aachen", "KU Leuven", "University of Sheffield", "Newcastle University"]
+  },
+
+  "auto_optics_hmi": {
+    "label_zh": "智能座舱/车载光学/HMI",
+    "triggers": ["光学", "optical", "optics", "HUD", "AR-HUD", "head-up display", "波导", "waveguide", "显示", "display", "Mini-LED", "座舱", "cockpit", "HMI", "人机交互", "human-machine", "多模态", "multimodal", "VCSEL", "激光显示", "laser display", "Zemax", "自由曲面", "freeform", "抬头显示", "DMS", "driver monitoring", "舱内", "in-cabin", "ToF", "数字人"],
+    "keywords": ["HUD", "AR-HUD", "head-up display", "waveguide", "optical design", "freeform optics", "Zemax", "CODE V", "Mini-LED", "VCSEL", "laser display", "imaging optics", "illumination", "smart cockpit", "in-cabin", "driver monitoring", "multimodal", "ToF", "3D perception"],
+    "titles": ["Optical Engineer", "Optical Scientist", "Research Scientist", "Display Engineer", "Perception Engineer"],
+    "companies": ["Continental", "Bosch", "Visteon", "Harman", "Panasonic Automotive", "LG Display", "Aptiv", "Texas Instruments", "Envisics", "WayRay", "Lumus", "DigiLens", "Apple", "Meta Reality Labs", "Magic Leap", "Microsoft"],
+    "schools": ["University of Rochester", "University of Arizona", "MIT", "Stanford", "Caltech", "Imperial College London", "ETH Zurich", "KAIST"]
+  },
+
+  "micro_motor": {
+    "label_zh": "微电机/电磁仿真",
+    "triggers": ["微电机", "电机", "motor", "BLDC", "PMSM", "步进", "stepper", "brushless", "无刷", "电磁仿真", "electromagnetic", "磁场", "magnetic", "ANSYS Maxwell", "JMAG", "有限元", "FEA", "执行器", "actuator", "永磁", "permanent magnet", "traction motor", "车规"],
+    "keywords": ["BLDC", "PMSM", "stepper motor", "brushless motor", "electric machine", "electromagnetic", "FEA", "ANSYS Maxwell", "JMAG", "motor design", "actuator", "magnetics", "traction motor"],
+    "titles": ["Motor Design Engineer", "Electric Machine Engineer", "Research Engineer", "Electromagnetic Engineer", "Research Scientist"],
+    "companies": ["Nidec", "Bosch", "Maxon", "Johnson Electric", "Continental", "Mabuchi", "Allied Motion", "ABB", "Siemens", "Tesla", "Rivian"],
+    "schools": ["University of Sheffield", "Newcastle University", "University of Nottingham", "University of Wisconsin-Madison", "Georgia Tech", "ETH Zurich", "University of Michigan"]
+  },
+
+  "ai_ml_general": {
+    "label_zh": "通用 AI / 机器学习",
+    "triggers": ["machine learning", "机器学习", "deep learning", "深度学习", "人工智能", "artificial intelligence", "computer vision", "计算机视觉", "NLP", "自然语言", "LLM", "大语言模型", "neural network", "神经网络", "recommendation", "推荐系统", "speech", "语音识别"],
+    "keywords": ["Machine Learning", "Deep Learning", "Artificial Intelligence", "Computer Vision", "Natural Language Processing", "NLP", "Large Language Model", "LLM", "Reinforcement Learning", "Generative AI", "Speech Recognition", "MLOps"],
+    "titles": ["Research Scientist", "Applied Scientist", "Research Engineer", "Machine Learning Engineer", "Member of Technical Staff"],
+    "companies": ["NVIDIA", "Google", "Microsoft", "Apple", "Amazon", "Meta", "Intel", "IBM", "Qualcomm", "OpenAI", "Anthropic", "Google DeepMind"],
+    "schools": ["MIT", "Stanford", "UC Berkeley", "Carnegie Mellon", "University of Washington", "UIUC", "Georgia Tech", "University of Toronto", "ETH Zurich", "National University of Singapore", "Nanyang Technological University", "Oxford", "Cambridge"]
+  },
+
+  "healthcare_biopharma": {
+    "label_zh": "医疗/生物医药",
+    "triggers": ["drug", "制药", "pharma", "生物", "医疗", "medical", "clinical", "临床", "免疫", "immunology", "oncology", "肿瘤", "bioinformatics", "生物信息", "基因", "genomics", "gene therapy", "antibody", "抗体", "细胞治疗", "cell therapy", "医药", "protein", "蛋白", "medicinal chemistry", "CMC", "biologics", "药物"],
+    "keywords": ["Drug Discovery", "Drug Development", "Medicinal Chemistry", "Computational Biology", "Bioinformatics", "Biostatistics", "Translational", "Immunology", "Oncology", "Clinical Development", "Cell Therapy", "Gene Therapy", "Biologics", "Genomics", "Antibody"],
+    "titles": ["Principal Scientist", "Senior Scientist", "Research Scientist", "Research Fellow", "Scientist"],
+    "companies": ["Pfizer", "Roche", "Genentech", "Novartis", "Merck", "AbbVie", "Bristol Myers Squibb", "AstraZeneca", "Eli Lilly", "Amgen", "Gilead Sciences", "Sanofi", "Moderna", "Regeneron", "Vertex Pharmaceuticals", "Thermo Fisher Scientific"],
+    "schools": ["Harvard", "MIT", "Stanford", "Johns Hopkins", "UC Berkeley", "UC San Diego", "Cambridge", "Oxford", "ETH Zurich", "National University of Singapore"]
+  },
+
+  "manufacturing": {
+    "label_zh": "制造/工业/工艺",
+    "triggers": ["制造", "manufacturing", "工艺", "process development", "半导体", "semiconductor", "wafer", "晶圆", "装配", "assembly", "质检", "自动化产线", "industrial", "机械", "mechanical", "产线", "yield", "良率", "可靠性", "reliability", "process integration"],
+    "keywords": ["Process Engineering", "Manufacturing", "Process Development", "Process Integration", "Industrial Engineering", "Automation", "Robotics", "Quality Engineering", "Reliability", "Yield", "Semiconductor", "Wafer", "Additive Manufacturing"],
+    "titles": ["Process Engineer", "R&D Engineer", "Research Scientist", "Principal Engineer", "Staff Engineer"],
+    "companies": ["Intel", "TSMC", "Applied Materials", "Lam Research", "Samsung", "Siemens", "Bosch", "General Electric", "Honeywell", "ABB", "Mitsubishi Electric", "Hitachi"],
+    "schools": ["MIT", "Stanford", "UC Berkeley", "Georgia Tech", "University of Michigan", "Purdue University", "ETH Zurich", "National University of Singapore", "Nanyang Technological University"]
+  },
+
+  "materials": {
+    "label_zh": "材料科学",
+    "triggers": ["材料", "materials", "高分子", "polymer", "金属", "metallurgy", "纳米", "nano", "电池材料", "catalysis", "催化", "thin film", "薄膜", "复合材料", "composite", "电化学", "electrochemistry", "陶瓷", "ceramic", "涂层", "coating", "半导体材料", "crystal", "晶体", "表面处理", "corrosion"],
+    "keywords": ["Materials Science", "Materials Engineer", "Polymer", "Metallurgy", "Nanomaterials", "Composite", "Battery", "Energy Storage", "Electrochemistry", "Catalysis", "Thin Film", "Semiconductor Materials", "Ceramic", "Coating", "Corrosion"],
+    "titles": ["Research Scientist", "Senior Scientist", "Materials Scientist", "Principal Scientist", "R&D Engineer"],
+    "companies": ["BASF", "Dow", "DuPont", "Corning", "3M", "Saint-Gobain", "Solvay", "Covestro", "Toray", "Shin-Etsu", "Applied Materials", "Umicore", "Merck KGaA"],
+    "schools": ["MIT", "Stanford", "UC Berkeley", "Northwestern University", "Georgia Tech", "University of Michigan", "ETH Zurich", "National University of Singapore", "Nanyang Technological University", "Oxford", "Cambridge"]
+  }
+}

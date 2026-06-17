@@ -37,9 +37,16 @@
 │   ├── target-companies.md            ← 四大行业的世界 500 强 / 龙头公司清单(可贴进检索式)
 │   ├── qs-top100-universities.md      ← QS 前 100 院校(分地区 + 校名别名/简称)
 │   └── return-intent-signals.md       ← 回国意愿信号词库
-└── examples/
-    └── joyson-roles.md                ← 实战示例:把"均胜高层次人才需求"表 → 按岗位簇可直接跑的检索方案
+├── examples/
+│   └── joyson-roles.md                ← 实战示例:把"均胜高层次人才需求"表 → 按岗位簇可直接跑的检索方案
+└── tools/
+    └── sourcing/
+        ├── jd2search.py               ← 【脚本】贴 JD → 自动生成 LinkedIn 布尔 + Google X-ray 检索式(零依赖)
+        ├── domains.json               ← 领域知识库(关键词/目标公司/强校),可自由编辑扩展
+        └── README.md                  ← 脚本用法
 ```
+
+> **懒人最快路径**:`python3 tools/sourcing/jd2search.py --file 某岗位JD.txt --region us` —— 直接吐出可粘贴的检索式。支持 12 个领域自动识别(具身智能/RL/推理优化/仿真/灵巧手/电力电子/车载光学/微电机/通用AI/医疗/制造/材料)。
 
 > **想看真实例子?** 直接打开 `examples/joyson-roles.md` —— 它把一张真实的招聘表(23 个博士岗:具身智能/新能源/智能座舱/微电机)拆成 8 个岗位簇,每簇都给了"该领域海外该挖的公司+实验室+强校 + 现成 LinkedIn/X-ray 检索式"。
 
