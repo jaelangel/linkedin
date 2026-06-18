@@ -35,6 +35,7 @@
 ├── reference/
 │   ├── chinese-surnames-pinyin.md     ← 华人姓名信号:常见姓氏拼音(含粤/台拼写)
 │   ├── target-companies.md            ← 四大行业的世界 500 强 / 龙头公司清单(可贴进检索式)
+│   ├── companies-by-role.md           ← 【按职位】每个岗位扩充的目标公司(500强栏 + 细分龙头栏 + 现成 OR 串)
 │   ├── qs-top100-universities.md      ← QS 前 100 院校(分地区 + 校名别名/简称)
 │   └── return-intent-signals.md       ← 回国意愿信号词库
 ├── examples/
